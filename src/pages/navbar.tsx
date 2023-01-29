@@ -1,4 +1,4 @@
-import {motion, spring, Variants} from "framer-motion";
+import {motion, Variants} from "framer-motion";
 import {useState} from "react";
 
 const itemVariants: Variants = {
