@@ -16,8 +16,9 @@ const Navbar = () => {
         <motion.nav
             initial={false}
             animate={isOpen ? "open" : "closed"}
+            className="justify-items-center"
         >
-            <div className="w-full justify-items-center">
+            <div className="w-96 justify-items-center mx-auto">
                 <motion.button
                 whileTap={{ scale: 0.97 }}
                 onClick={() => setIsOpen(!isOpen)}
