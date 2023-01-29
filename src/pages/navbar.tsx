@@ -16,9 +16,9 @@ const Navbar = () => {
         <motion.nav
             initial={false}
             animate={isOpen ? "open" : "closed"}
-            className="m-auto justify-center justify-items-center"
         >
-            <motion.button
+            <div className="w-full justify-items-center">
+                <motion.button
                 whileTap={{ scale: 0.97 }}
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-sky-400 text-2xl bg-sky-700 rounded-xl w-36 h-12 items-space-between"
@@ -37,34 +37,35 @@ const Navbar = () => {
                     </svg>
                 </motion.div>
             </motion.button>
-            <motion.ul
-                variants={{
-                    open: {
-                        clipPath: "inset(0% 0% 0% 0% round 10px)",
-                        transition: {
-                            type: "spring",
-                            bounce: 0,
-                            duration: 0.7,
-                            delayChildren: 0.3,
-                            staggerChildren: 0.05
+                <motion.ul
+                    variants={{
+                        open: {
+                            clipPath: "inset(0% 0% 0% 0% round 10px)",
+                            transition: {
+                                type: "spring",
+                                bounce: 0,
+                                duration: 0.7,
+                                delayChildren: 0.3,
+                                staggerChildren: 0.05
+                            }
+                        },
+                        closed: {
+                            clipPath: "inset(10% 50% 90% 50% round 10px)",
+                            transition: {
+                                type: "spring",
+                                bounce: 0,
+                                duration: 0.3
+                            }
                         }
-                    },
-                    closed: {
-                        clipPath: "inset(10% 50% 90% 50% round 10px)",
-                        transition: {
-                            type: "spring",
-                            bounce: 0,
-                            duration: 0.3
-                        }
-                    }
-                }}
-                style={{ pointerEvents: isOpen ? "auto" : "none" }}
-            >
-                <motion.li variants={itemVariants} className="text-cyan-400">Item 1</motion.li>
-                <motion.li variants={itemVariants} className="text-cyan-400">Item 2</motion.li>
-                <motion.li variants={itemVariants} className="text-cyan-400">Item 3</motion.li>
-                <motion.li variants={itemVariants} className="text-cyan-400">Item 4</motion.li>
-            </motion.ul>
+                    }}
+                    style={{ pointerEvents: isOpen ? "auto" : "none" }}
+                >
+                    <motion.li variants={itemVariants} className="text-cyan-400">Item 1</motion.li>
+                    <motion.li variants={itemVariants} className="text-cyan-400">Item 2</motion.li>
+                    <motion.li variants={itemVariants} className="text-cyan-400">Item 3</motion.li>
+                    <motion.li variants={itemVariants} className="text-cyan-400">Item 4</motion.li>
+                </motion.ul>
+            </div>
         </motion.nav>
     )
 }
